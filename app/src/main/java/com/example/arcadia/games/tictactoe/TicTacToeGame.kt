@@ -7,16 +7,31 @@ class TicTacToeGame(val skillMode: String = "easy") {
         arrayOf(intArrayOf(0, 0, 0), intArrayOf(0, 0, 0), intArrayOf(0, 0, 0))
 
 
-    fun gameStep(rowId: Int, colId: Int) {
+    fun gameStep(rowId: Int, colId: Int): Int {
         if (rowId == -1) {
             makeComputerMove()
+            return resolveWinner(checkIfWin())
+
         } else {
             makePlayerMove(rowId, colId)
+
+            var status = resolveWinner(checkIfWin())
+
+            if (status == -1) {
+                makeComputerMove()
+            }
+
+            status = resolveWinner(checkIfWin())
+
+            return status
         }
     }
 
-    fun resolveWinner(result: Array<IntArray>): Int {
-        return result[0][0]
+    private fun resolveWinner(result: Array<IntArray>): Int {
+        if (result[0][0] == -1) {
+            return -1
+        }
+        return field[result[0][0]][result[0][1]]
     }
 
     private fun makePlayerMove(rowId: Int, colId: Int) {
@@ -53,14 +68,18 @@ class TicTacToeGame(val skillMode: String = "easy") {
 
         for (i in 0..2) {
             for (j in 0..2) {
-                if (field[i][j] != 1) {
+                if (field[i][j] == 0) {
                     freePlaces.add(intArrayOf(i, j))
                 }
             }
         }
 
         val randomIndex = Random.nextInt(freePlaces.size)
+//        println("Step")
+//        for (i in freePlaces[randomIndex]) {
+//            println(i)
+//        }
+        field[freePlaces[randomIndex][0]][freePlaces[randomIndex][1]] = 2
 
-        field[freePlaces[randomIndex][0]][freePlaces[randomIndex][1]] = 1
     }
 }

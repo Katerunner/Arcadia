@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Arcadia/app/src/main/res/drawable/game_list_background.xml" value="0.2585" />
         <entry key="..\:/Arcadia/app/src/main/res/drawable/intro_text_background.xml" value="0.2595" />
+        <entry key="..\:/Arcadia/app/src/main/res/drawable/tictactoecell.xml" value="0.2595" />
         <entry key="..\:/Arcadia/app/src/main/res/layout/activity_intro.xml" value="0.16486486486486487" />
         <entry key="..\:/Arcadia/app/src/main/res/layout/activity_main.xml" value="0.16486486486486487" />
         <entry key="..\:/Arcadia/app/src/main/res/layout/activity_main_menu.xml" value="0.16486486486486487" />
+        <entry key="..\:/Arcadia/app/src/main/res/layout/activity_tic_tac_toe.xml" value="0.16486486486486487" />
         <entry key="..\:/Arcadia/app/src/main/res/layout/game_viewholder.xml" value="0.25" />
       </map>
     </option>
